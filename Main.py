@@ -20,7 +20,7 @@ def load_data():
 data = load_data()
 select_measure = st.selectbox('Select Measure', ('Sales', 'Profit'))
 
-select_segment = data['Segment'].unique()
+select_segment = data['Country'].unique()
     
 selected_segment = st.selectbox('Select Segment', select_segment)
 
