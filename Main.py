@@ -14,10 +14,6 @@ st.title("Dashboard")
 @st.cache_data
 def load_data():
     data = pd.read_csv('superstore.csv')
-    
-
-
-select_area = st.selectbox('Select Area', ('Supplies', 'Countries'))
 
 
 
