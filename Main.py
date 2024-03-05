@@ -57,10 +57,11 @@ if select_area == 'Countries':
 else:
     select_measure = st.selectbox('Select Measure', ('Sales', 'Profit'))
 
-    select_segment = data["Segment"].unique()
+    select_segment = data['Segment'].unique()
+    
     selected_segment = st.selectbox('Select Segment', select_segment)
 
-    df = data[data["Segment"] == selected_segment]
+    df = data[data['Segment'] == selected_segment]
 
     groupseg = df.groupby('Category').sum()[select_measure]
     chart = px.bar(groupseg)
@@ -68,10 +69,10 @@ else:
     st.plotly_chart(chart, use_container_width=True)
     
     #___________________________________________________________________
-    select_cat = data["Category"].unique()
+    select_cat = data['Category'].unique()
     selected_cat = st.selectbox('Select Category', select_cat)
 
-    dfc = df[df["Category"] == selected_cat]
+    dfc = df[df['Category'] == selected_cat]
 
     groupcat = dfc.groupby('Sub-Category').sum()[select_measure]
     chartc = px.bar(groupcat)
