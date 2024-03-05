@@ -14,7 +14,7 @@ st.title("Dashboard")
 
 
 
-data = superstore()
+data = pd.read_csv("superstore.csv")
 select_area = st.selectbox('Select Area', ('Supplies', 'Countries'))
 
 if select_area == 'Countries':
