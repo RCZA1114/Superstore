@@ -11,10 +11,12 @@ st.set_page_config(
 
 st.title("Dashboard")
 
+@st.cache_data
+def load_data():
+    data = superstore()
+    
+data = load_data()
 
-
-
-data = superstore()
 select_area = st.selectbox('Select Area', ('Supplies', 'Countries'))
 
 if select_area == 'Countries':
