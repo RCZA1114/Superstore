@@ -15,11 +15,13 @@ st.title("Dashboard")
 def load_data():
     data = superstore()
     
-data = load_data()
+
 
 select_area = st.selectbox('Select Area', ('Supplies', 'Countries'))
 
 if select_area == 'Countries':
+
+    data = load_data()
     select_measure = st.selectbox('Select Measure', ('Sales', 'Profit'))
 
     select_region = data["Region"].unique()
@@ -55,6 +57,8 @@ if select_area == 'Countries':
     st.plotly_chart(chartcity, use_container_width=True)
 
 else:
+
+    data = load_data()
     select_measure = st.selectbox('Select Measure', ('Sales', 'Profit'))
 
     select_segment = data['Segment'].unique()
