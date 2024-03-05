@@ -23,4 +23,3 @@ select_measure = st.selectbox('Select Measure', ('Sales', 'Profit'))
 select_segment = data["Segment"].unique()
 selected_segment = st.selectbox('Select Segment', select_segment)
 
-df = data[data["Segment"] == selected_segment]
