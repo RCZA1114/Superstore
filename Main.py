@@ -15,6 +15,7 @@ st.title("Dashboard")
 def load_data():
     data = pd.read_csv('superstore.csv')
 
+    return data
 
 
 data = load_data()
