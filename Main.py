@@ -13,7 +13,7 @@ st.title("Dashboard")
 
 @st.cache_data
 def load_data():
-    data = superstore()
+    data = pd.read_csv('superstore.csv')
     
 
 
