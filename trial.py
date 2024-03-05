@@ -17,7 +17,7 @@ selected_region = st.selectbox('Select Region', select_region)
 df = data[data["Region"] == selected_region]
 
 groupcountry = df.groupby('Country').sum()[select_measure]
-chart = px.bar(groupcountry, title=f"{select_measure} chart of each country from{selected_region}.")
+chart = px.bar(groupcountry, title=f"{select_measure}  chart of each country from{selected_region}.")
 
 
 st.plotly_chart(chart, use_container_width=True)
