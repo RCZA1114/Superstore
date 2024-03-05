@@ -6,6 +6,10 @@ from data import *
 data = pd.read_csv("superstore.csv")
 
 select_measure = st.selectbox('Select Measure', ('Sales', 'Profit'))
+groupreg = dfr.groupby('Region').sum()[select_measure]
+plot = px.bar(groupreg)
+st.plotly_chart(plot, use_container_width=True)
+
 
 select_region = data["Region"].unique()
 selected_region = st.selectbox('Select Region', select_region)
