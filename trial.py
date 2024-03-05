@@ -7,9 +7,12 @@ data = pd.read_csv("superstore.csv")
 
 select_measure = st.selectbox('Select Measure', ('Sales', 'Profit'))
 groupreg = data.groupby('Region').sum()[select_measure]
-plot = px.bar(groupreg)
+plot = px.bar(groupreg, title=f"{select_measure} chart of all regions.")
+gac = data.groupby('Country').sum()[select_measure]
+plot2 = px.bar(gac, title=f"{select_measure} chart of all countries.")
 st.plotly_chart(plot, use_container_width=True)
-
+st.plotly_chart(plot2, use_container_width=True)
+#_________________________________________________________________________________
 
 select_region = data["Region"].unique()
 selected_region = st.selectbox('Select Region', select_region)
